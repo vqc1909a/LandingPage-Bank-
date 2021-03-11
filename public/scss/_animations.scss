@@ -1,0 +1,41 @@
+@keyframes fade-in{
+  from{
+    visibility: hidden;
+    opacity: 0;
+  }
+  to{
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes translate-right-in {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes translate-right-out {
+   from {
+     transform: translateX(-150%);
+   }
+
+   to {
+     transform: translateX(0);
+   }
+}

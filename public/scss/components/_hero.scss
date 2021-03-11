@@ -1,0 +1,94 @@
+.hero{
+  background-color: $veryLightGray;
+  .wrapper-hero{
+    padding-top: 10vh;
+    min-height: 100vh;
+    @include breakpoint-up(large) {
+      display: flex;
+      align-items: center;
+      width: 90%;
+      margin-left: auto;
+    }
+  }
+
+  &__image{
+    align-self: stretch;
+    position: relative;
+    min-height: 40vh;
+    background-image: url('../../images/bg-intro-mobile.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    &::before{
+      content: "";
+      position: absolute;
+      width: 90%;
+      margin: 0 auto;
+      bottom: 0; 
+      top: -40%;
+      right: 0;
+      left: 0;
+      background-image: url('../../images/image-mockups.png');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+    @include breakpoint-up(large) {
+      flex: 3;
+      order: 2;
+      min-height: none;
+      background-image: url('../../images/bg-intro-desktop.svg');
+      background-size: 150% 150%;
+      background-position: 0% 74%;
+      &::before {
+        width: none;
+        background-size: 100% 95%;
+        left: 38%;
+        bottom: -25%;
+        z-index: 1;
+        transform: scaleX(1.6);
+      }
+    }
+     @include breakpoint-up(medium) {
+      min-height: 45vh;
+       &::before {
+        top: -20%;
+        width: 60%;
+       }
+     }
+  }
+  &__text{
+    min-height: 50vh;
+    @include breakpoint-up(medium){
+      min-height: 30vh;
+    }
+    h1{
+      font-family: 'Public Extra-Light',
+      sans-serif;
+      font-size: $font-xl;
+      color: $darkBlue;
+      margin: 2.5rem 0 1.375rem;
+      line-height: 1.3;
+      @include breakpoint-up(large) {
+          font-size: $font-xl-dt;
+          margin: 2rem 0;
+      }
+
+    }
+    p{
+      margin-bottom: 2.5rem;
+    }
+    @include breakpoint-up(large) {
+      margin-bottom: 2.25rem;
+      flex: 2;
+      order: 1;
+    }
+
+    @include breakpoint-down(medium) {
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+ 
+}

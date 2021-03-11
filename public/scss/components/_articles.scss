@@ -1,0 +1,86 @@
+.articles{
+  min-height: 70vh;
+  background-color: $veryLightGray;
+  padding: 3rem 0;
+  @include breakpoint-up(large) {
+    padding: 6rem 0;
+  }
+
+  .wrapper-articles{
+    border: 1px solid transparent;
+    @include breakpoint-up(large) {
+      width: 80%;
+      margin: 0 auto;
+      text-align: left;
+    }
+  }
+  h2 {
+    color: $darkBlue;
+    font-size: $font-lg;
+    font-family: 'Public Thin';
+    margin: 0rem 0 2rem;
+    text-align: center;
+
+    @include breakpoint-up(large) {
+      text-align: left;
+      margin: 0rem 0 2rem;
+      font-size: $font-lg-dt;
+    }
+  }
+  &__grid{
+    display: grid;
+    grid-gap: 1.875rem;
+    //Esto es otra form de hacer las cuadriculas con auto ajuste(se jausta al contenido existente) pero nel
+    // grid-template-columns: repeat(auto-fit, minmax(14.375rem, 1fr));
+    grid-template-columns: 1fr;
+    @include breakpoint-up(medium){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up(large){
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__item{
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: $white;
+    box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 150ms ease-in-out;
+    &:hover{
+      transform: scale(1.05);
+      .articles__title{
+        color: $limeGreen;
+      }
+    }
+  }
+  &__image {
+    height: 9.375rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &__text{
+    padding: 1.75rem;
+    padding-bottom: 2.375rem;
+    color: $grayishBlue;
+    border-radius: 10px;
+    @include breakpoint-up(large) {
+       padding: 1.5rem;
+    }
+  }
+  &__author{
+    font-size: $font-sl-dt;
+  }
+  &__title{
+    margin: .5rem 0;
+    font-family: 'Public Thin', sans-serif;
+    color: $darkBlue;
+    line-height: 1.15;
+    transition: color 150ms ease-in-out;
+
+  }
+  &__description{
+    line-height: 1.15;
+    font-size: $font-sm-dt;
+  }
+}

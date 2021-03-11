@@ -1,0 +1,135 @@
+html{
+  font-size: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*, *:after, *:before{
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-size: $font-nm; 
+  font-family: 'Public Regular', sans-serif;
+  color: $grayishBlue;
+  line-height: 1.5;
+
+  @include breakpoint-up(large) {
+    font-size: $font-nm-dt;
+  }
+  
+}
+a, a:visited, a:hover{
+  text-decoration: none;
+}
+
+
+//Buttons
+.button {
+  border: none;
+  background: none;
+  outline: none;
+  position: relative;
+  padding: 0.875rem 2.1875rem; //14px 35px
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, $limeGreen, $BrigthCyan);
+  color: $white;
+  font-family: 'Public Bold', sans-serif;
+  cursor: pointer;
+  transition: opacity 300ms ease-in-out;
+
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255,255,255, .25);
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+  &:hover {
+    &::before{
+      opacity: 1;
+    }
+  }
+}
+
+//Fonts
+@font-face {
+  font-family: 'Public Thin';
+  src: url('../../fonts/PublicSans-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Public Extra-Light';
+  src: url('../../fonts/PublicSans-Light.ttf');
+}
+@font-face {
+  font-family: 'Public Light';
+  src: url('../../fonts/PublicSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Public Regular';
+  src: url('../../fonts/PublicSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Public Bold';
+  src: url('../../fonts/PublicSans-Bold.ttf');
+}
+//Spacing
+
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+//Reset
+h1,h2,h3,h4,h5,h6,p{
+  margin: 0;
+}
+
+//FlexBox
+.flex{
+ display: flex;
+ &-jc-sb{
+   justify-content: space-between;
+ } 
+ &-jc-c{
+   justify-content: center;
+ }
+ &-ai-c{  
+   align-items: center;
+ }
+ &-as-s{
+   align-self: stretch;
+ }
+ &-fd-c{
+   flex-direction: column;
+ }
+}
+
+
+//Visibility
+.hide-for-mobile{
+  //hide fot tablet and mobile
+  @include breakpoint-down(medium){
+    display: none;
+  }
+}
+.hide-for-desktop{
+  //hide for desktop viewport width
+  @include breakpoint-up(large){
+    display: none;
+  }
+}
+
+
+
